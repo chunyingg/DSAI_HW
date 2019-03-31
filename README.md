@@ -1,4 +1,8 @@
-# DSAI_HW
+# DSAI_HW1
+
+## forecasting.ipynb 固定鏈結
+https://nbviewer.jupyter.org/gist/chunyingg/5cbac6c691ab7cf69487feb79b8dd4a8/forecasting.ipynb
+
 
 ## 資料集
 主要使用 '高峰值2019.csv' 作為訓練集<br>
