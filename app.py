@@ -13,7 +13,7 @@ from keras.models import load_model
 import arrow
 
 train = pd.read_csv('高峰值2019.csv')
-print(train)
+#print(train)
 
 def buildTrain(train):
     X_train, Y_train = [], []
@@ -78,10 +78,10 @@ def lstm_stock_model(shape):
 
 # load
 model = load_model('my_model.h5')
-print('test after load: ', model.predict(np.array(train_norm[54:84]).reshape((1,30,1))))
+#print('test after load: ', model.predict(np.array(train_norm[54:84]).reshape((1,30,1))))
 Predict1 = model.predict(np.array(train_norm[54:84]).reshape((1,30,1)))
 trainPredict = scaler.inverse_transform(Predict1)
-print(trainPredict)
+#print(trainPredict)
 
 def get_date_range(start, limit, level='day',format='YYYY-MM-DD'):
     start = arrow.get(start, format)  
@@ -91,11 +91,11 @@ def get_date_range(start, limit, level='day',format='YYYY-MM-DD'):
 
 te = pd.DataFrame(trainPredict).T
 te.index = get_date_range('2019-03-26',7)
-print(te)
+#print(te)
 train.index = pd.to_datetime(train['date'])
 plt.plot(train['尖峰負載(MW)'],color='blue')
 plt.plot(te,color='red')
-plt.show()
+#plt.show()
 
 te['尖峰負載(MW)'] = te[0]
 te = te.drop(0,axis=1)
